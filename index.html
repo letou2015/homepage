@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快乐导航 - 最全面的网址导航，提供优质高效的网络浏览体验</title>
+    <meta name="description" content="快乐导航提供热门网站、购物平台、娱乐媒体、新闻资讯和实用工具等多类网址链接，让您的网络体验更加高效愉悦。">
+    <meta name="keywords" content="网址导航,搜索引擎,购物网站,娱乐平台,新闻,工具,网站导航">
+    <meta name="author" content="快乐导航">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.happynav.com/">
+    <!-- Open Graph / 社交媒体元标签 -->
+    <meta property="og:title" content="快乐导航 - 最全面的网址导航">
+    <meta property="og:description" content="便捷高效的网址导航站，助您快速访问常用网站。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.happynav.com/">
+    <meta property="og:image" content="https://www.happynav.com/images/og-image.jpg">
+    <!-- Twitter卡片 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="快乐导航 - 最全面的网址导航">
+    <meta name="twitter:description" content="便捷高效的网址导航站，助您快速访问常用网站。">
+    <!-- 站点图标 -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc05;
+            --danger-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark-color);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--danger-color));
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        h1:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            transition: all var(--transition-speed);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.3);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--primary-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            transition: all var(--transition-speed);
+        }
+
+        .search-box button:hover {
+            background: #3367d6;
+            transform: scale(1.05);
+        }
+
+        .category {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .category h2 i {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+        }
+
+        .category-description {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .site-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+            border-radius: 12px;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--dark-color);
+        }
+
+        .site-card:hover {
+            background-color: #f0f5ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.15);
+        }
+
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .site-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .site-name {
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .site-description {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #666;
+            margin-top: 3px;
+            display: none;
+        }
+
+        .site-card:hover .site-description {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            color: #666;
+            background: white;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 10px;
+        }
+
+        /* 动态彩虹按钮 */
+        .rainbow-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--danger-color));
+            background-size: 300% 100%;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            animation: rainbow 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rainbow-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes rainbow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 暗色模式切换 */
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all var(--transition-speed);
+        }
+
+        .theme-switch:hover {
+            transform: rotate(30deg);
+        }
+
+        .dark-mode {
+            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
+            color: #f0f0f0;
+        }
+
+        .dark-mode .category {
+            background: #2d2d2d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dark-mode .site-card {
+            color: #f0f0f0;
+        }
+
+        .dark-mode .site-card:hover {
+            background-color: #3d3d3d;
+        }
+
+        .dark-mode .theme-switch {
+            background: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        .dark-mode .category h2 {
+            border-bottom-color: #3d3d3d;
+        }
+
+        .dark-mode .search-box input {
+            background: #2d2d2d;
+            color: #f0f0f0;
+        }
+
+        .dark-mode footer {
+            background: #2d2d2d;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .category-description,
+        .dark-mode .site-description {
+            color: #aaa;
+        }
+
+        .dark-mode .site-card:hover .site-description {
+            color: #ccc;
+        }
+
+        /* 面包屑导航 */
+        .breadcrumbs {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 结构化数据支持部分 */
+        .schema-data {
+            display: none;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .sites-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sites-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* 可访问性改进 */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 9999;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+    <!-- 结构化数据标记 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "快乐导航",
+      "url": "https://www.happynav.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "一站式网址导航平台，收录优质网站，提供便捷高效的网络浏览体验。"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://www.happynav.com/"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">跳到主内容</a>
+    
+    <div class="theme-switch" id="themeSwitch" aria-label="切换深色模式">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+    </div>
+
+    <div class="container" id="main-content">
+        <header>
+            <h1>快乐导航</h1>
+            <p class="tagline">发现更大的网络世界，让每次浏览都充满快乐</p>
+            <a href="#categories" class="rainbow-button">开始探索</a>
+        </header>
+
+        <div class="search-box" role="search">
+            <input type="text" id="searchInput" placeholder="搜索网站..." autocomplete="off" aria-label="搜索网站">
+            <button id="searchBtn" aria-label="搜索按钮"><i class="fas fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <nav aria-label="面包屑导航" class="breadcrumbs">
+            <span><a href="/">首页</a> > 网址导航</span>
+        </nav>
+
+        <div id="categories">
+            <section class="category fade-in" aria-labelledby="popular-sites">
+                <h2 id="popular-sites"><i class="fas fa-globe" aria-hidden="true"></i>热门网站</h2>
+                <p class="category-description">为您精选全球最受欢迎的网站，满足您的日常浏览需求。</p>
+                <div class="sites-grid">
+                    <a href="https://www.google.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Google 搜索">
+                        <div class="site-icon">
+                            <img src="https://www.google.com/favicon.ico" alt="Google 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Google</div>
+                        <div class="site-description">全球最大的搜索引擎</div>
+                    </a>
+                    <a href="https://www.baidu.com" class="site-card" target="_blank" rel="noopener" aria-label="访问百度">
+                        <div class="site-icon">
+                            <img src="https://www.baidu.com/favicon.ico" alt="百度图标" loading="lazy">
+                        </div>
+                        <div class="site-name">百度</div>
+                        <div class="site-description">中国最大的搜索引擎</div>
+                    </a>
+                    <a href="https://www.bing.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Bing">
+                        <div class="site-icon">
+                            <img src="https://www.bing.com/favicon.ico" alt="Bing 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Bing</div>
+                        <div class="site-description">微软推出的搜索引擎</div>
+                    </a>
+                    <a href="https://www.youtube.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 YouTube">
+                        <div class="site-icon">
+                            <img src="https://www.youtube.com/favicon.ico" alt="YouTube 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">YouTube</div>
+                        <div class="site-description">全球最大的视频平台</div>
+                    </a>
+                    <a href="https://www.bilibili.com" class="site-card" target="_blank" rel="noopener" aria-label="访问哔哩哔哩">
+                        <div class="site-icon">
+                            <img src="https://www.bilibili.com/favicon.ico" alt="哔哩哔哩图标" loading="lazy">
+                        </div>
+                        <div class="site-name">哔哩哔哩</div>
+                        <div class="site-description">国内知名的视频弹幕网站</div>
+                    </a>
+                    <a href="https://www.facebook.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Facebook">
+                        <div class="site-icon">
+                            <img src="https://www.facebook.com/favicon.ico" alt="Facebook 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Facebook</div>
+                        <div class="site-description">全球最大的社交媒体平台</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category fade-in" aria-labelledby="shopping-sites">
+                <h2 id="shopping-sites"><i class="fas fa-shopping-cart" aria-hidden="true"></i>购物网站</h2>
+                <p class="category-description">汇集国内外优质购物平台，让您轻松选购心仪商品。</p>
+                <div class="sites-grid">
+                    <a href="https://www.amazon.com" class="site-card" target="_blank" rel="noopener" aria-label="访问亚马逊">
+                        <div class="site-icon">
+                            <img src="https://www.amazon.com/favicon.ico" alt="亚马逊图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Amazon</div>
+                        <div class="site-description">全球最大的电商平台</div>
+                    </a>
+                    <a href="https://www.taobao.com" class="site-card" target="_blank" rel="noopener" aria-label="访问淘宝">
+                        <div class="site-icon">
+                            <img src="https://www.taobao.com/favicon.ico" alt="淘宝图标" loading="lazy">
+                        </div>
+                        <div class="site-name">淘宝</div>
+                        <div class="site-description">中国领先的购物网站</div>
+                    </a>
+                    <a href="https://www.jd.com" class="site-card" target="_blank" rel="noopener" aria-label="访问京东">
+                        <div class="site-icon">
+                            <img src="https://www.jd.com/favicon.ico" alt="京东图标" loading="lazy">
+                        </div>
+                        <div class="site-name">京东</div>
+                        <div class="site-description">值得信赖的综合网上购物平台</div>
+                    </a>
+                    <a href="https://www.pinduoduo.com" class="site-card" target="_blank" rel="noopener" aria-label="访问拼多多">
+                        <div class="site-icon">
+                            <img src="https://www.pinduoduo.com/favicon.ico" alt="拼多多图标" loading="lazy">
+                        </div>
+                        <div class="site-name">拼多多</div>
+                        <div class="site-description">新兴的社交电商平台</div>
+                    </a>
+                    <a href="https://www.ebay.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 eBay">
+                        <div class="site-icon">
+                            <img src="https://www.ebay.com/favicon.ico" alt="eBay 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">eBay</div>
+                        <div class="site-description">全球知名的在线拍卖和购物网站</div>
+                    </a>
+                    <a href="https://www.aliexpress.com" class="site-card" target="_blank" rel="noopener" aria-label="访问全球速卖通">
+                        <div class="site-icon">
+                            <img src="https://www.aliexpress.com/favicon.ico" alt="AliExpress 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">AliExpress</div>
+                        <div class="site-description">阿里巴巴旗下全球购物平台</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category fade-in" aria-labelledby="entertainment-sites">
+                <h2 id="entertainment-sites"><i class="fas fa-play-circle" aria-hidden="true"></i>娱乐平台</h2>
+                <p class="category-description">精选国内外流行的视频、音乐和娱乐网站，丰富您的休闲生活。</p>
+                <div class="sites-grid">
+                    <a href="https://www.netflix.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Netflix">
+                        <div class="site-icon">
+                            <img src="https://www.netflix.com/favicon.ico" alt="Netflix 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Netflix</div>
+                        <div class="site-description">全球领先的流媒体服务平台</div>
+                    </a>
+                    <a href="https://www.hulu.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Hulu">
+                        <div class="site-icon">
+                            <img src="https://www.hulu.com/favicon.ico" alt="Hulu 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Hulu</div>
+                        <div class="site-description">提供电视节目和电影的流媒体服务</div>
+                    </a>
+                    <a href="https://www.iqiyi.com" class="site-card" target="_blank" rel="noopener" aria-label="访问爱奇艺">
+                        <div class="site-icon">
+                            <img src="https://www.iqiyi.com/favicon.ico" alt="爱奇艺图标" loading="lazy">
+                        </div>
+                        <div class="site-name">爱奇艺</div>
+                        <div class="site-description">中国领先的视频平台</div>
+                    </a>
+                    <a href="https://www.youku.com" class="site-card" target="_blank" rel="noopener" aria-label="访问优酷">
+                        <div class="site-icon">
+                            <img src="https://www.youku.com/favicon.ico" alt="优酷图标" loading="lazy">
+                        </div>
+                        <div class="site-name">优酷</div>
+                        <div class="site-description">阿里巴巴旗下视频平台</div>
+                    </a>
+                    <a href="https://v.qq.com" class="site-card" target="_blank" rel="noopener" aria-label="访问腾讯视频">
+                        <div class="site-icon">
+                            <img src="https://v.qq.com/favicon.ico" alt="腾讯视频图标" loading="lazy">
+                        </div>
+                        <div class="site-name">腾讯视频</div>
+                        <div class="site-description">腾讯旗下的视频服务平台</div>
+                    </a>
+                    <a href="https://www.spotify.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Spotify">
+                        <div class="site-icon">
+                            <img src="https://www.spotify.com/favicon.ico" alt="Spotify 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Spotify</div>
+                        <div class="site-description">全球流行的音乐流媒体服务</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category fade-in" aria-labelledby="news-sites">
+                <h2 id="news-sites"><i class="fas fa-newspaper" aria-hidden="true"></i>新闻资讯</h2>
+                <p class="category-description">汇集国内外主流新闻平台，及时获取全球资讯。</p>
+                <div class="sites-grid">
+                    <a href="https://news.google.com" class="site-card" target="_blank" rel="noopener" aria-label="访问谷歌新闻">
+                        <div class="site-icon">
+                            <img src="https://news.google.com/favicon.ico" alt="Google News 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Google News</div>
+                        <div class="site-description">谷歌的新闻聚合平台</div>
+                    </a>
+                    <a href="https://www.bbc.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 BBC">
+                        <div class="site-icon">
+                            <img src="https://www.bbc.com/favicon.ico" alt="BBC 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">BBC</div>
+                        <div class="site-description">英国广播公司官方网站</div>
+                    </a>
+                    <a href="https://www.cnn.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 CNN">
+                        <div class="site-icon">
+                            <img src="https://www.cnn.com/favicon.ico" alt="CNN 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">CNN</div>
+                        <div class="site-description">美国有线电视新闻网</div>
+                    </a>
+                    <a href="https://www.thepaper.cn" class="site-card" target="_blank" rel="noopener" aria-label="访问澎湃新闻">
+                        <div class="site-icon">
+                            <img src="https://www.thepaper.cn/favicon.ico" alt="澎湃新闻图标" loading="lazy">
+                        </div>
+                        <div class="site-name">澎湃新闻</div>
+                        <div class="site-description">中国知名的新闻媒体</div>
+                    </a>
+                    <a href="https://www.sina.com.cn" class="site-card" target="_blank" rel="noopener" aria-label="访问新浪网">
+                        <div class="site-icon">
+                            <img src="https://www.sina.com.cn/favicon.ico" alt="新浪图标" loading="lazy">
+                        </div>
+                        <div class="site-name">新浪</div>
+                        <div class="site-description">中国领先的门户网站</div>
+                    </a>
+                    <a href="https://www.163.com" class="site-card" target="_blank" rel="noopener" aria-label="访问网易">
+                        <div class="site-icon">
+                            <img src="https://www.163.com/favicon.ico" alt="网易图标" loading="lazy">
+                        </div>
+                        <div class="site-name">网易</div>
+                        <div class="site-description">中国知名的互联网公司</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category fade-in" aria-labelledby="tools-sites">
+                <h2 id="tools-sites"><i class="fas fa-tools" aria-hidden="true"></i>工具网站</h2>
+                <p class="category-description">收集实用的在线工具和服务，提升您的工作和学习效率。</p>
+                <div class="sites-grid">
+                    <a href="https://www.github.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 GitHub">
+                        <div class="site-icon">
+                            <img src="https://www.github.com/favicon.ico" alt="GitHub 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">GitHub</div>
+                        <div class="site-description">全球最大的代码托管平台</div>
+                    </a>
+                    <a href="https://translate.google.com" class="site-card" target="_blank" rel="noopener" aria-label="访问谷歌翻译">
+                        <div class="site-icon">
+                            <img src="https://translate.google.com/favicon.ico" alt="谷歌翻译图标" loading="lazy">
+                        </div>
+                        <div class="site-name">谷歌翻译</div>
+                        <div class="site-description">免费的多语言翻译服务</div>
+                    </a>
+                    <a href="https://www.wolframalpha.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 WolframAlpha">
+                        <div class="site-icon">
+                            <img src="https://www.wolframalpha.com/favicon.ico" alt="WolframAlpha 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">WolframAlpha</div>
+                        <div class="site-description">强大的知识计算引擎</div>
+                    </a>
+                    <a href="https://www.notion.so" class="site-card" target="_blank" rel="noopener" aria-label="访问 Notion">
+                        <div class="site-icon">
+                            <img src="https://www.notion.so/favicon.ico" alt="Notion 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Notion</div>
+                        <div class="site-description">多合一的工作空间工具</div>
+                    </a>
+                    <a href="https://www.canva.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Canva">
+                        <div class="site-icon">
+                            <img src="https://www.canva.com/favicon.ico" alt="Canva 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Canva</div>
+                        <div class="site-description">简易的在线设计工具</div>
+                    </a>
+                    <a href="https://www.webex.com" class="site-card" target="_blank" rel="noopener" aria-label="访问 Webex">
+                        <div class="site-icon">
+                            <img src="https://www.webex.com/favicon.ico" alt="Webex 图标" loading="lazy">
+                        </div>
+                        <div class="site-name">Webex</div>
+                        <div class="site-description">专业的在线会议平台</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/about" title="关于我们">关于我们</a>
+                <a href="/contact" title="联系方式">联系我们</a>
+                <a href="/privacy" title="隐私政策">隐私政策</a>
+                <a href="/terms" title="使用条款">使用条款</a>
+                <a href="/sitemap.xml" title="网站地图">网站地图</a>
+            </div>
+            <p class="copyright">© <span id="current-year">2023</span> 快乐导航 - 让您的网络体验更加愉悦</p>
+        </footer>
+    </div>
+
+    <script>
+        // 处理暗色模式切换
+        const themeSwitch = document.getElementById('themeSwitch');
+        const body = document.body;
+        const icon = themeSwitch.querySelector('i');
+
+        // 检查本地存储中的主题设置
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.className = 'fas fa-sun';
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // 处理搜索功能
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+
+        searchBtn.addEventListener('click', () => {
+            performSearch();
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                // 记录搜索事件
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'search', {
+                        search_term: query
+                    });
+                }
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        // 滚动动画
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // 检查初始可见性
+        window.addEventListener('DOMContentLoaded', checkFade);
+        // 滚动时检查
+        window.addEventListener('scroll', checkFade);
+
+        // 添加卡片悬停效果
+        const siteCards = document.querySelectorAll('.site-card');
+        
+        siteCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.05)';
+                card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // 为搜索框添加焦点动画
+        const searchBox = document.querySelector('.search-box');
+        
+        searchInput.addEventListener('focus', () => {
+            searchBox.style.transform = 'scale(1.02)';
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchBox.style.transform = 'scale(1)';
+        });
+
+        // 更新年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 监听外部链接点击
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 记录外部链接点击
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'outbound_click', {
+                        url: this.href,
+                        link_text: this.innerText
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- 延迟加载非关键JavaScript -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
